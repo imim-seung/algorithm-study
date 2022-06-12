@@ -27,6 +27,3 @@ n,m=map(int, sys.stdin.readline().rstrip().split())
 trees=list(map(int,sys.stdin.readline().rstrip().split()))
 trees.sort(reverse=True)
 print(binary_search(trees,m,0,trees[0]))
-
-    
-
