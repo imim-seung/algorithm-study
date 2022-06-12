@@ -1,3 +1,4 @@
+import sys
 
 
 def binary_search(array,target,start,end):
@@ -11,14 +12,14 @@ def binary_search(array,target,start,end):
   else:
     return binary_search(array,target,mid+1,end)
 
-n=int(input())
+n=int(sys.stdin.readline().rstrip())
 num_list=[]
-for num in list(map(int,input().split())):
+for num in list(map(int,sys.stdin.readline().rstrip().split())):
   num_list.append(num)
 
 num_list.sort()
-m=input()
-for target in list(map(int, input().split())):
-  print(1 if binary_search(num_list,target,0,n) else 0)
+m=int(sys.stdin.readline().rstrip())
+for target in list(map(int, sys.stdin.readline().rstrip().split())):
+  print(1 if binary_search(num_list,target,0,n-1) else 0)
     
 
