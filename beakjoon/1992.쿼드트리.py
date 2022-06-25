@@ -11,8 +11,8 @@ def make_q_tree(board,n):
   elif check==n*n:
     quad_tree+='1'
   else :
-    if n > 1:
-      quad_tree='('+quad_tree+')'
+    
+    quad_tree+='('
     tmp=[board[i][0:n//2] for i in range(0,n//2)]
     make_q_tree(tmp,n//2)
     tmp=[board[i][n//2:] for i in range(0,n//2)]
@@ -21,6 +21,7 @@ def make_q_tree(board,n):
     make_q_tree(tmp,n//2)
     tmp=[board[i][n//2:] for i in range(n//2,n)]
     make_q_tree(tmp,n//2)
+    quad_tree+=')'
     
 
 n=int(sys.stdin.readline().rstrip())
